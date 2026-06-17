@@ -14,9 +14,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@android:drawable/ic_lock_idle_alarm"
+        android:icon="@drawable/vecteezy_icon_symbol_education_atl_11684633"
         android:label="@string/app_name"
-        android:roundIcon="@android:drawable/ic_lock_idle_alarm"
+        android:roundIcon="@drawable/vecteezy_icon_symbol_education_atl_11684633"
         android:supportsRtl="true"
         android:theme="@style/Theme.SpeakTimer">
 
