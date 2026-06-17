@@ -2,56 +2,29 @@ plugins {
     id 'com.android.application'
 }
 
-if (file('google-services.json').exists()) {
-    apply plugin: 'com.google.gms.google-services'
-} else {
-    println "google-services.json not found, skipping Google Services plugin."
-}
-
-def gitSha = 'git rev-parse --short HEAD'.execute().text.trim()
-def gitShaFull = 'git rev-parse HEAD'.execute().text.trim()
-def gitTag = 'git describe        --tags'.execute().text.trim()
-
 android {
-    namespace 'com.vypeensoft.videochatapp'
+    namespace 'com.example.speaktimer'
     compileSdk 34
 
-    buildFeatures {
-        buildConfig true
-    }
-
     defaultConfig {
-        applicationId "com.vypeensoft.videochatapp"
+        applicationId "com.example.speaktimer"
         minSdk 24
         targetSdk 34
         versionCode 1
         versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-        // Inject Git info into BuildConfig
-        buildConfigField "String", "BUILD_TIMESTAMP", "\"${new Date().format('yyyyMMdd.HHmmss', TimeZone.getTimeZone('Asia/Kolkata'))}\""
-        buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
-        buildConfigField "String", "GIT_SHA_FULL", "\"${gitShaFull}\""
-        buildConfigField "String", "GIT_TAG", "\"${gitTag}\""
-    }
-
-
-    splits {
-        abi {
-            enable false
-            reset()
-            include "armeabi-v7a", "arm64-v8a"
-            universalApk false
-        }
     }
 
     buildTypes {
         release {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 
     compileOptions {
@@ -64,14 +37,5 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    
-    // WebRTC Android Library
-    implementation 'im.conversations.webrtc:webrtc-android:119.0.0'
-
-    // OkHttp for WebSocket connection
-    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
-
-    // Firebase Messaging
-    implementation platform('com.google.firebase:firebase-bom:32.7.2')
-    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
 }

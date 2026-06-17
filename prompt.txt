@@ -1,0 +1,379 @@
+create an android application which is basically a CountDown/CountUp timer with speaking out loud option
+It should have two tabs accordingly
+It should have regular timer/counting fields like 
+	* running clock
+	* pause button 
+	* reset button 
+	* Speak or not checkbox
+	* Speaking interval dropdown
+	
+Develop the app in java (not kotlin)
+Need a left side menu with items like "Settings", "Help", "About", with their own pages
+They should have back arrow on top to return to main menu.
+
+use latest gradle version supported by github actions
+include gradle properties and gradle wrapper dependencies in the project
+The project must build successfully using GitHub Actions.
+
+Give it as a single prompt to give to an agent to achieve this
+
+=====================================================
+
+Use the following single prompt with your coding agent:
+
+Create a complete Android application in **Java (not Kotlin)** named **SpeakTimer**.
+
+## Objective
+
+Build an Android app that provides both:
+
+1. **Count Down Timer**
+2. **Count Up Timer**
+
+using a **TabLayout + ViewPager2** interface with two tabs:
+
+* Count Down
+* Count Up
+
+The app must be production-quality, compile successfully, and be compatible with GitHub Actions CI builds.
+
+---
+
+# Technical Requirements
+
+## Language & Framework
+
+* Java only
+* AndroidX
+* Material Design Components
+* Minimum SDK: 24
+* Target SDK: latest stable Android SDK
+* Compile SDK: latest stable Android SDK
+* Gradle: latest version currently supported by GitHub Actions Android builds
+* Use Gradle Wrapper
+* Use View Binding
+* No Kotlin files
+* No Compose
+
+---
+
+# Main Screen
+
+Use:
+
+* DrawerLayout
+* NavigationView (left hamburger menu)
+* AppBar/Toolbar
+
+Main content contains:
+
+* TabLayout
+* ViewPager2
+
+Tabs:
+
+### Tab 1: Count Down
+
+Features:
+
+* Time input fields:
+
+  * Hours
+  * Minutes
+  * Seconds
+* Running timer display
+* Start button
+* Pause button
+* Resume button
+* Reset button
+* "Speak Aloud" checkbox
+* Speaking Interval dropdown (Spinner)
+
+Speaking interval values:
+
+* Every 1 second
+* Every 5 seconds
+* Every 10 seconds
+* Every 15 seconds
+* Every 30 seconds
+* Every 60 seconds
+
+Behavior:
+
+* Countdown decreases each second.
+* When Speak Aloud is enabled:
+
+  * Use Android TextToSpeech.
+  * Speak remaining time according to selected interval.
+* At completion:
+
+  * Speak:
+    "Timer finished"
+  * Show notification.
+  * Show alert dialog.
+
+---
+
+### Tab 2: Count Up
+
+Features:
+
+* Running timer display
+* Start button
+* Pause button
+* Resume button
+* Reset button
+* "Speak Aloud" checkbox
+* Speaking Interval dropdown
+
+Behavior:
+
+* Counts upward from 00:00:00.
+* Uses same TextToSpeech logic.
+* Speaks elapsed time according to selected interval.
+
+---
+
+# Text To Speech Requirements
+
+Implement:
+
+* TextToSpeech initialization
+* Lifecycle-safe cleanup
+* Proper shutdown in onDestroy
+* Runtime handling when TTS engine unavailable
+* User-friendly error messages
+
+Create reusable helper class:
+
+TextToSpeechManager
+
+Responsibilities:
+
+* Initialize TTS
+* Speak text
+* Stop speech
+* Shutdown
+
+---
+
+# Navigation Drawer
+
+Hamburger menu on left.
+
+Menu items:
+
+1. Settings
+2. Help
+3. About
+
+Each item opens its own Activity.
+
+---
+
+# Settings Screen
+
+Toolbar with:
+
+* Back arrow
+* Title: Settings
+
+Options:
+
+* Enable notifications
+* Default speaking interval
+* Default speak enabled
+
+Persist using SharedPreferences.
+
+---
+
+# Help Screen
+
+Toolbar with:
+
+* Back arrow
+
+Content:
+
+Explain:
+
+* Count Down mode
+* Count Up mode
+* Speech announcements
+* How intervals work
+
+Use ScrollView.
+
+---
+
+# About Screen
+
+Toolbar with:
+
+* Back arrow
+
+Display:
+
+* App name
+* Version
+* Description
+
+Example:
+
+"SpeakTimer is a CountDown and CountUp timer with voice announcements."
+
+---
+
+# Notifications
+
+When countdown finishes:
+
+Create notification channel.
+
+Show notification:
+
+Title:
+Timer Finished
+
+Message:
+Your countdown timer has completed.
+
+Support Android 8+ notification channels.
+
+---
+
+# Architecture
+
+Use clean package structure:
+
+com.example.speaktimer
+
+Packages:
+
+* activities
+* fragments
+* adapters
+* tts
+* utils
+* settings
+
+---
+
+# UI Requirements
+
+Material Design styling.
+
+Responsive layouts.
+
+Use:
+
+* ConstraintLayout where appropriate
+* MaterialButton
+* MaterialCheckBox
+* MaterialToolbar
+* TextInputLayout
+* TextInputEditText
+
+Large timer display.
+
+Landscape support.
+
+Dark mode support.
+
+Strings must be in strings.xml.
+
+No hardcoded strings.
+
+---
+
+# Persistence
+
+Use SharedPreferences for:
+
+* Speak enabled default
+* Speaking interval
+* Notification enabled
+
+Load preferences automatically when app starts.
+
+---
+
+# Error Handling
+
+Validate countdown input:
+
+* Prevent negative values
+* Prevent empty timer values
+* Show clear error messages
+
+Prevent multiple timer instances running simultaneously.
+
+Handle activity recreation correctly.
+
+---
+
+# Required Files
+
+Generate ALL required files:
+
+* AndroidManifest.xml
+* settings.gradle
+* build.gradle (project)
+* build.gradle (app)
+* gradle.properties
+* gradle-wrapper.properties
+* proguard-rules.pro
+* GitHub Actions workflow
+
+Include complete source code.
+
+Do not omit any file.
+
+---
+
+# GitHub Actions
+
+Create:
+
+.github/workflows/android.yml
+
+Requirements:
+
+* Ubuntu latest
+* Set up JDK 17
+* Grant gradlew execute permission
+* Run:
+
+./gradlew clean
+./gradlew assembleDebug
+
+Workflow must successfully build the project.
+
+---
+
+# Gradle Requirements
+
+Use versions compatible with current Android Studio and GitHub Actions.
+
+Include:
+
+* Android Gradle Plugin
+* Gradle Wrapper
+* AndroidX dependencies
+* Material Components
+* ViewPager2
+
+The generated project must compile without modification.
+
+---
+
+# Deliverables
+
+Provide the FULL Android Studio project structure and COMPLETE source code for every file.
+
+Do not provide placeholders.
+
+Do not skip implementation details.
+
+This prompt is designed to force the agent to generate a complete Java Android project, including Gradle wrapper configuration, CI workflow, navigation drawer, tabs, TextToSpeech functionality, settings persistence, and all required source files.

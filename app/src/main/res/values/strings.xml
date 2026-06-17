@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SpeakTimer</string>
+    
+    <!-- Tab Titles -->
+    <string name="tab_countdown">Count Down</string>
+    <string name="tab_countup">Count Up</string>
+    
+    <!-- Navigation Drawer -->
+    <string name="nav_header_title">SpeakTimer</string>
+    <string name="nav_header_subtitle">Voice Announcement Timer</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_help">Help</string>
+    <string name="menu_about">About</string>
+    
+    <!-- General Controls -->
+    <string name="btn_start">Start</string>
+    <string name="btn_pause">Pause</string>
+    <string name="btn_resume">Resume</string>
+    <string name="btn_reset">Reset</string>
+    <string name="chk_speak_aloud">Speak Aloud</string>
+    <string name="lbl_speaking_interval">Speaking Interval:</string>
+    <string name="default_timer_display">00:00:00</string>
+    
+    <!-- Count Down Tab -->
+    <string name="lbl_hours">Hours</string>
+    <string name="lbl_minutes">Minutes</string>
+    <string name="lbl_seconds">Seconds</string>
+    
+    <!-- Speaking Intervals -->
+    <string name="interval_1s">Every 1 second</string>
+    <string name="interval_5s">Every 5 seconds</string>
+    <string name="interval_10s">Every 10 seconds</string>
+    <string name="interval_15s">Every 15 seconds</string>
+    <string name="interval_30s">Every 30 seconds</string>
+    <string name="interval_60s">Every 60 seconds</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">Settings</string>
+    <string name="pref_enable_notifications">Enable Notifications</string>
+    <string name="pref_default_speak_enabled">Default Speak Enabled</string>
+    <string name="pref_default_interval">Default Speaking Interval</string>
+    
+    <!-- Help Screen -->
+    <string name="help_title">Help &amp; Guide</string>
+    <string name="help_intro">Welcome to SpeakTimer! Below is a guide on how to use the app features.</string>
+    <string name="help_countdown_header">Count Down Mode</string>
+    <string name="help_countdown_desc">Enter the hours, minutes, and seconds you wish to count down from. Tap Start to begin. The timer will count down to 00:00:00. When it finishes, a notification will display, an alert will show, and a speech announcement will play.</string>
+    <string name="help_countup_header">Count Up Mode</string>
+    <string name="help_countup_desc">This mode acts as a stopwatch starting from 00:00:00. Simply press Start to begin tracking your elapsed time.</string>
+    <string name="help_speech_header">Speech Announcements</string>
+    <string name="help_speech_desc">When \"Speak Aloud\" is checked, the app uses Android\'s TextToSpeech (TTS) engine to announce the remaining time (in Count Down) or elapsed time (in Count Up) at your selected interval.</string>
+    <string name="help_intervals_header">How Intervals Work</string>
+    <string name="help_intervals_desc">Choose a speaking interval from the dropdown spinner (e.g. \"Every 5 seconds\" or \"Every 10 seconds\"). The voice announcement will trigger exactly at those time milestones.</string>
+    
+    <!-- About Screen -->
+    <string name="about_title">About SpeakTimer</string>
+    <string name="about_version">Version 1.0.0</string>
+    <string name="about_desc">SpeakTimer is a CountDown and CountUp timer with voice announcements.</string>
+    <string name="about_developer">Developed in production-quality Java.</string>
+    
+    <!-- Notifications & Dialogue -->
+    <string name="notification_channel_name">Timer Status</string>
+    <string name="notification_channel_desc">Notifications for timer completion</string>
+    <string name="timer_finished_title">Timer Finished</string>
+    <string name="timer_finished_message">Your countdown timer has completed.</string>
+    <string name="dialog_ok">OK</string>
+    <string name="tts_finished_speech">Timer finished</string>
+    
+    <!-- Error Handling -->
+    <string name="error_invalid_input">Invalid timer value</string>
+    <string name="error_empty_input">Please enter a time value to start</string>
+    <string name="error_tts_unavailable">TextToSpeech is not available or failed to initialize on this device.</string>
+</resources>
