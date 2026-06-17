@@ -151,7 +151,6 @@
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:layout_marginTop="32dp"
-                android:weightSum="4"
                 app:layout_constraintTop_toBottomOf="@id/layout_options"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
@@ -161,18 +160,20 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginHorizontal="4dp"
                     android:text="@string/btn_start"
-                    android:textSize="11sp" />
+                    android:textSize="16sp"
+                    android:paddingVertical="12dp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_pause"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginHorizontal="4dp"
                     android:text="@string/btn_pause"
-                    android:textSize="11sp"
+                    android:textSize="16sp"
+                    android:paddingVertical="12dp"
                     android:visibility="gone" />
 
                 <com.google.android.material.button.MaterialButton
@@ -180,9 +181,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginHorizontal="4dp"
                     android:text="@string/btn_resume"
-                    android:textSize="11sp"
+                    android:textSize="16sp"
+                    android:paddingVertical="12dp"
                     android:visibility="gone" />
 
                 <com.google.android.material.button.MaterialButton
@@ -190,9 +192,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginHorizontal="2dp"
+                    android:layout_marginHorizontal="4dp"
                     android:text="@string/btn_reset"
-                    android:textSize="11sp"
+                    android:textSize="16sp"
+                    android:paddingVertical="12dp"
                     android:enabled="false" />
             </LinearLayout>
 
