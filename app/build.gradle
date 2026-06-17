@@ -2,6 +2,22 @@ plugins {
     id 'com.android.application'
 }
 
+def getGitSha = { ->
+    try {
+        return 'git rev-parse --short HEAD'.execute().text.trim()
+    } catch (Exception e) {
+        return "N/A"
+    }
+}
+
+def getGitShaFull = { ->
+    try {
+        return 'git rev-parse HEAD'.execute().text.trim()
+    } catch (Exception e) {
+        return "N/A"
+    }
+}
+
 android {
     namespace 'com.example.speaktimer'
     compileSdk 34
@@ -14,6 +30,10 @@ android {
         versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "BUILD_TIMESTAMP", "\"${new Date().format('yyyyMMdd.HHmmss', TimeZone.getTimeZone('Asia/Kolkata'))}\""
+        buildConfigField "String", "GIT_SHA", "\"${getGitSha()}\""
+        buildConfigField "String", "GIT_SHA_FULL", "\"${getGitShaFull()}\""
     }
 
     buildTypes {
@@ -25,6 +45,7 @@ android {
 
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
 
     compileOptions {
