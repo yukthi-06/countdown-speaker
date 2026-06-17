@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SpeakTimer</string>
+    <string name="app_name">Speaking Counter</string>
     
     <!-- Tab Titles -->
     <string name="tab_countdown">Count Down</string>
     <string name="tab_countup">Count Up</string>
     
     <!-- Navigation Drawer -->
-    <string name="nav_header_title">SpeakTimer</string>
+    <string name="nav_header_title">Speaking Counter</string>
     <string name="nav_header_subtitle">Voice Announcement Timer</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_help">Help</string>
@@ -43,7 +43,7 @@
     
     <!-- Help Screen -->
     <string name="help_title">Help &amp; Guide</string>
-    <string name="help_intro">Welcome to SpeakTimer! Below is a guide on how to use the app features.</string>
+    <string name="help_intro">Welcome to Speaking Counter! Below is a guide on how to use the app features.</string>
     <string name="help_countdown_header">Count Down Mode</string>
     <string name="help_countdown_desc">Enter the hours, minutes, and seconds you wish to count down from. Tap Start to begin. The timer will count down to 00:00:00. When it finishes, a notification will display, an alert will show, and a speech announcement will play.</string>
     <string name="help_countup_header">Count Up Mode</string>
@@ -54,9 +54,9 @@
     <string name="help_intervals_desc">Choose a speaking interval from the dropdown spinner (e.g. \"Every 5 seconds\" or \"Every 10 seconds\"). The voice announcement will trigger exactly at those time milestones.</string>
     
     <!-- About Screen -->
-    <string name="about_title">About SpeakTimer</string>
+    <string name="about_title">About Speaking Counter</string>
     <string name="about_version">Version 1.0.0</string>
-    <string name="about_desc">SpeakTimer is a CountDown and CountUp timer with voice announcements.</string>
+    <string name="about_desc">Speaking Counter is a CountDown and CountUp timer with voice announcements.</string>
     <string name="about_developer">Developed in production-quality Java.</string>
     
     <!-- Notifications & Dialogue -->
