@@ -203,7 +203,7 @@ public class CountupFragment extends Fragment {
         if (s > 0 || text.length() == 0) {
             text.append(s).append(s == 1 ? " second " : " seconds ");
         }
-        text.append("elapsed");
+        //text.append("elapsed");
         ttsManager.speak(text.toString());
     }
 

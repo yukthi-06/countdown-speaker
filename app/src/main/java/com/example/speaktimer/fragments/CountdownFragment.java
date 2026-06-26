@@ -250,7 +250,7 @@ public class CountdownFragment extends Fragment {
         if (s > 0 || text.length() == 0) {
             text.append(s).append(s == 1 ? " second " : " seconds ");
         }
-        text.append("remaining");
+        //text.append("remaining");
         ttsManager.speak(text.toString());
     }
 
