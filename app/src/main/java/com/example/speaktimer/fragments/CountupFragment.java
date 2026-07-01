@@ -131,6 +131,10 @@ public class CountupFragment extends Fragment {
         isRunning = true;
         isPaused = false;
 
+        if (binding.chkSpeak.isChecked()) {
+            ttsManager.speak(getString(R.string.tts_started_speech));
+        }
+
         updateTimerDisplay();
         updateUIState();
 

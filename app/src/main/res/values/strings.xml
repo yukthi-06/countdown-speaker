@@ -66,6 +66,7 @@
     <string name="timer_finished_message">Your countdown timer has completed.</string>
     <string name="dialog_ok">OK</string>
     <string name="tts_finished_speech">Timer finished</string>
+    <string name="tts_started_speech">Started</string>
     
     <!-- Error Handling -->
     <string name="error_invalid_input">Invalid timer value</string>
