@@ -17,9 +17,9 @@ public class TimerPagerAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         if (position == 0) {
-            return new CountdownFragment();
-        } else {
             return new CountupFragment();
+        } else {
+            return new CountdownFragment();
         }
     }
 

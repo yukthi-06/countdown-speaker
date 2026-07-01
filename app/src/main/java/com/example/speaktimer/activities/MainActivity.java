@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         new TabLayoutMediator(binding.tabLayout, binding.viewPager, (tab, position) -> {
             if (position == 0) {
-                tab.setText(getString(R.string.tab_countdown));
-            } else {
                 tab.setText(getString(R.string.tab_countup));
+            } else {
+                tab.setText(getString(R.string.tab_countdown));
             }
         }).attach();
     }
