@@ -177,11 +177,21 @@ public class CountdownFragment extends Fragment {
 
     private void pauseTimer() {
         isPaused = true;
+        
+        if (binding.chkSpeak.isChecked()) {
+            ttsManager.speak(getString(R.string.tts_paused_speech));
+        }
+        
         updateUIState();
     }
 
     private void resumeTimer() {
         isPaused = false;
+        
+        if (binding.chkSpeak.isChecked()) {
+            ttsManager.speak(getString(R.string.tts_resumed_speech));
+        }
+        
         updateUIState();
         timerHandler.removeCallbacks(timerRunnable);
         timerHandler.postDelayed(timerRunnable, 1000);
@@ -192,6 +202,10 @@ public class CountdownFragment extends Fragment {
         isPaused = false;
         totalDurationSeconds = 0;
         remainingTimeSeconds = 0;
+
+        if (binding.chkSpeak.isChecked()) {
+            ttsManager.speak(getString(R.string.tts_reset_speech));
+        }
 
         timerHandler.removeCallbacks(timerRunnable);
         binding.tvTimerDisplay.setText(getString(R.string.default_timer_display));

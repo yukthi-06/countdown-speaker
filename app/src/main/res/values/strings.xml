@@ -67,6 +67,9 @@
     <string name="dialog_ok">OK</string>
     <string name="tts_finished_speech">Timer finished</string>
     <string name="tts_started_speech">Started</string>
+    <string name="tts_paused_speech">Paused</string>
+    <string name="tts_resumed_speech">Resumed</string>
+    <string name="tts_reset_speech">Reset</string>
     
     <!-- Error Handling -->
     <string name="error_invalid_input">Invalid timer value</string>
